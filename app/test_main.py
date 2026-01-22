@@ -34,6 +34,11 @@ def test_should_return_correct_values(
         pytest.param([0, 1], 0, TypeError, id="list - int - TypeError"),
         pytest.param((0, 0), 1, TypeError, id="tuple - int - TypeError"),
         pytest.param({0: 0, 1: 1}, 0, TypeError, id="dict - int - TypeError"),
+        pytest.param(None, 1, TypeError, id="None - int - TypeError"),
+        pytest.param(0, "0", TypeError, id="int - str - TypeError"),
+        pytest.param(0, [0, 1], TypeError, id="int - list - TypeError"),
+        pytest.param(1, (0, 0), TypeError, id="int - tuple - TypeError"),
+        pytest.param(0, {0: 0, 1: 1}, TypeError, id="int - dict - TypeError"),
         pytest.param(1, None, TypeError, id="int - None - TypeError"),
     ]
 )
